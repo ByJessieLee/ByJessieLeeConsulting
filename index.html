@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Jessie Lee | Marketing Specialist & Brand Architect</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --accent-gold: #c5a059;
+            --sky-blue: #0077b6;
+            --pure-white: #ffffff;
+            --deep-black: #0a0a0a;
+            --soft-gray: #f8f9fa;
+            --glass-white: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--deep-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation: High-End Minimalist */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: var(--glass-white);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -1.5px;
+            color: var(--deep-black);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .cta-nav {
+            background: var(--deep-black);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .cta-nav:hover { background: var(--accent-gold); }
+
+        /* Hero: The Vision */
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('20190816_200332.jpg'); /* Sky High Vision */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-text { max-width: 900px; }
+
+        .hero-tagline {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 650px;
+            font-weight: 300;
+            color: #444;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 2rem;
+        }
+
+        /* Section Layouts */
+        section { padding: 140px 10%; }
+
+        .section-label {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+            line-height: 1;
+        }
+
+        /* Service Pillars: The "How I Help" */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: var(--soft-gray);
+            padding: 4rem 3rem;
+            border-radius: 2px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .pillar-card:hover {
+            background: white;
+            border-color: var(--accent-gold);
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+        }
+
+        .pillar-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .pillar-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .pillar-list li {
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .pillar-list li::before {
+            content: "";
+            width: 12px;
+            height: 1px;
+            background: var(--accent-gold);
+            margin-right: 15px;
+        }
+
+        /* Philosophy: Community Alchemy */
+        .philosophy-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            background: var(--deep-black);
+            color: white;
+            padding: 120px 10%;
+        }
+
+        .phil-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Impact: Strategy Case Studies */
+        .impact-item {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .impact-item h3 {
+            font-size: 2.2rem;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 160px 10%;
+            background: var(--soft-gray);
+        }
+
+        .big-link {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 8vw, 6.5rem);
+            font-weight: 900;
+            text-decoration: none;
+            color: var(--deep-black);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .big-link:hover { color: var(--accent-gold); }
+
+        footer {
+            padding: 4rem 10%;
+            display: flex;
+            justify-content: space-between;
+            background: var(--deep-black);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 1024px) {
+            .philosophy-split, .impact-item { grid-template-columns: 1fr; }
+            .hero-title { font-size: 4.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">By Jessie Lee.</a>
+        <a href="#contact" class="cta-nav">Work with Me</a>
+    </nav>
+
+    <header>
+        <div class="hero-text">
+            <span class="hero-tagline">2025 40 Under 40 Leader</span>
+            <h1 class="hero-title">Building Brands.<br>Igniting Impact.</h1>
+            <p class="hero-subtitle">High-performing Marketing Specialist converting data-informed logic into creative fire. I build ecosystems that turn awareness into measurable engagement.</p>
+        </div>
+    </header>
+
+    <section id="pillars">
+        <span class="section-label">Core Consulting Pillars</span>
+        <h2 class="section-title">Strategic Solutions for Modern Brands.</h2>
+        <div class="pillar-grid">
+            
+            <div class="pillar-card">
+                <h3>Digital Ecosystems</h3>
+                <p>Developing omnichannel campaigns that tell a compelling story while driving measurable growth and market expansion.</p>
+                <ul class="pillar-list">
+                    <li>Digital Marketing Strategy</li>
+                    <li>SEO & Organic Search Optimization</li>
+                    <li>Omnichannel Campaign Planning</li>
+                    <li>Performance Analytics & Goal Setting</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Visual Storytelling</h3>
+                <p>Merging technical production with creative direction to earn attention online and off.</p>
+                <ul class="pillar-list">
+                    <li>Film Production & High-End Editing</li>
+                    <li>Commercial Voiceover Production</li>
+                    <li>Graphic Design & Visual Identity</li>
+                    <li>Strategic Content Development</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Operational Impact</h3>
+                <p>Building the operational backbone for brand consistency and high-stakes problem solving.</p>
+                <ul class="pillar-list">
+                    <li>Strategic SOP Development</li>
+                    <li>Experiential Marketing Activations</li>
+                    <li>Strategic Partnership Management</li>
+                    <li>Organizational Growth & Delegation</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="philosophy-split">
+        <img src="extraimage.jpg" class="phil-img" alt="Modern Dynamics"> <!-- Lanterns -->
+        <div>
+            <span class="section-label" style="color: white;">The Philosophy</span>
+            <h2 class="section-title" style="color: white;">Community Alchemy.</h2>
+            <p style="font-size: 1.25rem; font-weight: 300; margin-bottom: 2rem;">"I don't just build campaigns; I build connections. My work is rooted in the belief that brand value is found at the intersection of data-informed logic and human heartbeat."</p>
+            <p style="opacity: 0.7;">Whether launching a new product, managing high-stakes nursing recruitment, or building a community-driven winter event like the Polar Bear Plunge, Jessie Lee brings clarity and consistency to every initiative.</p>
+        </div>
+    </div>
+
+    <section id="impact">
+        <span class="section-label">Proven Results</span>
+        <h2 class="section-title">Case Studies of Connection.</h2>
+        
+        <div class="impact-item">
+            <div style="font-weight: 800; color: var(--accent-gold);">BRAND EXPANSION</div>
+            <div>
+                <h3>The Orontes Expansion</h3>
+                <p>Led all branding and marketing for a fast-growing dairy brand, managing the entire lifecycle from strategic planning to omnichannel execution and retail partnerships.</p>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <div style="font-weight: 800; color: var(--accent-gold);">HEALTHCARE RECRUITMENT</div>
+            <div>
+                <h3>Geisinger Medical Systems</h3>
+                <p>Managed nursing recruitment and community engagement accounts through immersive experiential marketing and data-driven brand messaging.</p>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <div style="font-weight: 800; color: var(--accent-gold);">COMMUNITY CATALYST</div>
+            <div>
+                <h3>Lewisburg Neighborhoods</h3>
+                <p>As Digital Marketing Developer for the Polar Bear Plunge, I lead visibility efforts through filming and editing high-impact promotional reels that drive record participation.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="final-cta">
+        <span class="section-label">Start the Evolution</span>
+        <br>
+        <a href="mailto:hello@byjessielee.com" class="big-link">Let's Build Together.</a>
+        <p style="margin-top: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">"Making champions on and off the field."</p>
+    </div>
+
+    <footer>
+        <div>© 2026 BY JESSIE LEE. ALL RIGHTS RESERVED.</div>
+        <div>LEWISBURG, PA & GLOBAL REMOTE</div>
+    </footer>
+
+    <script>
+        // Smooth Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .pillar-card, .impact-item, .philosophy-split').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(40px)";
+            el.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+```
